@@ -1,16 +1,27 @@
 <template>
-  <div class="A Post">
-    <div id="form">
-      <h3>A Post</h3>
-      <label for="body">Body: </label>
-      <input name="body" type="text" id="body" required v-model="post.body" />
-    </div>
-    <div class="container">
-      <button @click="updatePost" class="updatePost">Update Post</button>
-      <button @click="deletePost" class="deletePost">Delete Post</button>
-    </div>
+  <div>
+    <main>
+      <section class="addpost-page">
+        <div class="form-container">
+          <form>
+            <h3>A Post</h3>
+            <div class="container">
+              <div class="column">
+                <label for="body">Body: </label>
+              </div>
+              <div class="column">
+                <input name="body" type="text" id="body" required v-model="post.body" />
+              </div>
+            </div><br>
+            <button @click="updatePost" class="updatePost">Update Post</button>
+            <button @click="deletePost" class="deletePost">Delete Post</button>
+          </form>
+        </div>
+      </section>
+    </main>
   </div>
 </template>
+
 <script>
 export default {
   name: "APost",
@@ -64,3 +75,62 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+form {
+  border-radius: 25px;
+  border: 2px solid #2a2cc9;
+  background-color: rgb(231, 231, 231);
+}
+
+label {
+  padding: 12px 30px;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #2a2cc9;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 5px 15px 5px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 30%;
+}
+
+p {
+  width: 320px;
+  padding: 0 15px;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+.form-container {
+  margin-top: 108px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 350px;
+  padding: 15px 0;
+  display: inline-flex;
+}
+</style>

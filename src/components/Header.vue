@@ -11,7 +11,7 @@
 
 <style scoped>
 nav {
-  margin-left: -8px;
+  margin-left: -38px;
   background-color: rgba(176, 176, 176, 0.77);
   position: fixed;
   width: 100%;
