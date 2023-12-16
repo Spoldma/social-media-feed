@@ -1,12 +1,26 @@
 <template>
-  <div class="form-container">
-    <h3>SignUp</h3>
-    <label for="email">Email</label>
-    <input type="email" name="email"  required v-model="email">
-    <label for="password">Password</label>
-    <input type="password" name="password" required v-model="password">
-    <div v-if="errMsg">{{errMsg}} </div>
-    <button @click="SignUp" class="SignUp">SignUp</button>
+  <div>
+    <main>
+      <section class="signup-page">
+        <div class="form-container">
+          <form>
+            <h3>SignUp</h3>
+            <div class="container">
+              <div class="column">
+                <label for="email">Email</label>
+                <label for="password">Password</label>
+              </div>
+              <div class="column">
+                <input type="email" placeholder="Email" name="email" required v-model="email">
+                <input type="password" placeholder="Password" name="password" required v-model="password">
+              </div>
+            </div><br>
+            <div v-if="errMsg">{{errMsg}} </div>
+            <button @click="SignUp" class="SignUp">SignUp</button>
+          </form>
+        </div>
+      </section>
+    </main>
   </div>
 </template>
 
@@ -71,7 +85,7 @@ form {
 
 label {
   padding: 12px 15px;
-  margin: -1px 10px;
+  margin: 5px 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -80,6 +94,7 @@ label {
 input {
   width: 100%;
   padding: 12px 20px;
+  margin: 6px 0;
   display: flex;
   border: 1px solid #ccc;
   border-radius: 15px;
@@ -90,7 +105,7 @@ button {
   background-color: #2a2cc9;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0px 15px 0px;
+  margin: 8px 0 15px 0;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -99,7 +114,7 @@ button {
 
 p {
   width: 320px;
-  padding: 0px 15px;
+  padding: 0 15px;
 }
 
 button:hover {
@@ -115,7 +130,7 @@ button:hover {
 
 .container {
   width: 350px;
-  padding: 15px 0px;
+  padding: 15px 0;
   display: inline-flex;
 }
 </style>

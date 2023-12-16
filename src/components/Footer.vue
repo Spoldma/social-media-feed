@@ -2,7 +2,7 @@
   <footer>
     <div>
       <nav>
-        <router-link to="/contact">Contat us</router-link>
+        <router-link to="/contact">Contact us</router-link>
       </nav>
       <p>Group S©</p>
     </div>
