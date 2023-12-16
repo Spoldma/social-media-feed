@@ -6,18 +6,14 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Run frontend
 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Run backend (navigate to /server)
 
 ```
-npm run build
+nodemon server
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
