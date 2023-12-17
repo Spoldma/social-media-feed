@@ -51,7 +51,6 @@ export default {
       })
           .then((response) => {
             console.log(response.data);
-            this.$router.push("/api/allposts");
             window.location.href = '/'
           })
           .catch((e) => {
@@ -65,7 +64,6 @@ export default {
       })
           .then((response) => {
             console.log(response.data);
-            this.$router.push("/api/allposts");
             window.location.href = '/'
           })
           .catch((e) => {
