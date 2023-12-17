@@ -50,7 +50,7 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        location.assign("/");
+        window.location.href = '/';
       })
       .catch((e) => {
         console.log(e);

@@ -35,6 +35,9 @@ export default {
     }
   },
   watch: {
+    email(value) {
+      this.email = value;
+    },
     password(value) {
       this.password = value;
       this.validatePassword(value);
@@ -58,13 +61,12 @@ export default {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: 'include',
         body: JSON.stringify(data),
       })
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
-            window.location.href = '/';
+            window.location.href = '/login';
           })
           .catch((e) => {
             console.log(e);

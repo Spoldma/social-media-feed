@@ -6,8 +6,9 @@
   <div class="post-container">
     <post v-for="post in posts" :href="'/api/apost/' + post.id" :post="post"></post>
   </div>
-  <div class="delete-all">
-    <button @click="deleteAll" class="center">Delete all</button>
+  <div class="bottom-buttons">
+    <button @click='this.$router.push("/addpost")' class="left">Add Post</button>
+    <button @click="deleteAll" class="right">Delete all</button>
   </div>
   </body>
 </template>
@@ -83,7 +84,16 @@ button {
   flex-direction: column;
 }
 
-.delete-all {
+.bottom-buttons {
+  margin-top: -40px;
   margin-bottom: 100px;
+}
+
+.left {
+  margin-right: 40px;
+}
+
+.right {
+  margin-left: 40px;
 }
 </style>
