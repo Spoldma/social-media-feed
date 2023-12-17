@@ -23,7 +23,7 @@ const execute = async(query1, query2) => {
 const createTblQuery1 = `
     CREATE TABLE IF NOT EXISTS "posts" (
         id SERIAL PRIMARY KEY,
-        date DATE DEFAULT CURRENT_DATE,
+        date VARCHAR(10) NOT NULL,
         body VARCHAR(500) NOT NULL
     );`;
 
