@@ -47,7 +47,7 @@ export default {
       })
           .then((response) => {
             console.log(response.data);
-            window.location.href = '/';
+            this.$router.push('/');
           })
           .catch((e) => {
             console.log(e);

@@ -6,8 +6,6 @@ import SignUp from "../views/Signup.vue";
 import LogIn from "../views/Login.vue";
 import Contact from "../views/Contact.vue";
 import auth from "../auth";
-import home from "@/views/Home.vue";
-
 
 const routes = [{
         path: '/',
@@ -62,11 +60,6 @@ const routes = [{
         path: "/login",
         name: "LogIn",
         component: LogIn,
-    },
-    {
-        path: "/home",
-        name: "home",
-        component: Home,
     },
     { //will route to AllPosts view if none of the previous routes apply
         path: "/:catchAll(.*)",
