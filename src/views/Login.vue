@@ -47,15 +47,15 @@ export default {
         credentials: 'include',
         body: JSON.stringify(data),
       })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            location.assign("/");
-          })
-          .catch((e) => {
-            console.log(e);
-            console.log("error");
-          });
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error");
+      });
     },
   },
 }

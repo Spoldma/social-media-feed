@@ -1,30 +1,49 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AllPosts from "../views/Home.vue";
+import Home from "../views/Home.vue";
 import APost from "../views/APost.vue";
 import AddPost from "../views/AddPost.vue";
 import SignUp from "../views/Signup.vue";
 import LogIn from "../views/Login.vue";
+import auth from "../auth";
 
 const routes = [{
-    path: '/',
-    name: 'AllPosts',
-    component: () =>
-        import ("../views/Home.vue")
-    },
-    {
-        path: "/api/allposts",
-        name: "AllPosts",
-        component: AllPosts,
+        path: '/',
+        name: 'Home',
+        component: Home,
+        beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/login')
+            } else {
+                next();
+            }
+    }
     },
     {
         path: "/api/apost/:id",
         name: "APost",
         component: APost,
+        beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/login')
+            } else {
+                next();
+            }
+        }
     },
     {
         path: "/addpost",
         name: "AddPost",
         component: AddPost,
+        beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/login')
+            } else {
+                next();
+            }
+        }
     },
     {
         path: "/signup",
@@ -38,8 +57,16 @@ const routes = [{
     },
     { //will route to AllPosts view if none of the previous routes apply
         path: "/:catchAll(.*)",
-        name: "AllPosts",
-        component: AllPosts,
+        name: "Home",
+        component: Home,
+        beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/login')
+            } else {
+                next();
+            }
+        }
     }
 ]
 
@@ -47,7 +74,5 @@ const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes
 })
-
-
 
 export default router
