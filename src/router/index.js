@@ -4,7 +4,9 @@ import APost from "../views/APost.vue";
 import AddPost from "../views/AddPost.vue";
 import SignUp from "../views/Signup.vue";
 import LogIn from "../views/Login.vue";
+import Contact from "../views/Contact.vue";
 import auth from "../auth";
+
 
 const routes = [{
         path: '/',
@@ -49,6 +51,11 @@ const routes = [{
         path: "/signup",
         name: "SignUp",
         component: SignUp,
+    },
+    {
+        path: "/contact",
+        name: "Contact",
+        component: Contact,
     },
     {
         path: "/login",
