@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>
+    <p class="contactus">
       Contact us if you have any questions!
     </p>
   </div>
@@ -8,4 +8,7 @@
 <script>
 </script>
 <style>
+.contactus {
+  margin-top: 200px;
+}
 </style>
