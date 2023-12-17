@@ -35,9 +35,6 @@ export default {
     }
   },
   watch: {
-    email(value) {
-      this.email = value;
-    },
     password(value) {
       this.password = value;
       this.validatePassword(value);
