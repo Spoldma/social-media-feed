@@ -52,7 +52,7 @@ export default {
           .then((response) => {
             console.log(response.data);
             this.$router.push("/api/allposts");
-            window.location.href = '/'; // Replace '/' with your homepage URL
+            window.location.href = '/'
           })
           .catch((e) => {
             console.log(e);
@@ -66,7 +66,7 @@ export default {
           .then((response) => {
             console.log(response.data);
             this.$router.push("/api/allposts");
-            window.location.href = '/'; // Replace '/' with your homepage URL
+            window.location.href = '/'
           })
           .catch((e) => {
             console.log(e);

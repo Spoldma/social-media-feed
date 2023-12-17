@@ -11,8 +11,8 @@
 
 <style scoped>
 footer {
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: .2em;
+  padding-bottom: .2em;
   margin-left: -8px;
   background-color: rgba(176, 176, 176, 0.77);
   position: fixed;

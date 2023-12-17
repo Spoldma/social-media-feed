@@ -6,6 +6,9 @@
   <div class="post-container">
     <post v-for="post in posts" :href="'/api/apost/' + post.id" :post="post"></post>
   </div>
+  <div class="delete-all">
+    <button @click="deleteAll" class="center">Delete all</button>
+  </div>
   </body>
 </template>
 
@@ -25,6 +28,12 @@ export default {
           .then((response) => response.json())
           .then((data) => (this.posts = data))
           .catch((err) => console.log(err.message));
+    },
+    deleteAll()  {
+      // Simple DELETE request with fetch
+      fetch('http://localhost:3000/api/posts', { method: 'DELETE',credentials: 'include',  })
+          .then(() => this.status = 'Delete successful');
+      window.location.reload();
     },
     Logout() {
       fetch("http://localhost:3000/auth/logout", {
@@ -74,8 +83,8 @@ button {
   flex-direction: column;
 }
 
-.reset-likes {
+.delete-all {
   position: sticky;
-  bottom: 55px;
+  bottom: 100px;
 }
 </style>
