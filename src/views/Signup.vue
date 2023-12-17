@@ -41,6 +41,10 @@ export default {
     password(value) {
       this.password = value;
       this.validatePassword(value);
+    },
+    email(value){
+      this.email = value;
+      this.validateEmail(value);
     }
   },
   methods: {
@@ -48,6 +52,14 @@ export default {
       if (value.length < 8 || value.length >= 16 || !/[A-Z]/.test(value) || !/[0-9]/.test(value)) {
         this.errMsg = "Password must be at least 8 characters  and less than 16 characters, it must include a capital letter and at least one number"
       }else{
+        this.errMsg = ''
+      }
+    },
+    validateEmail(value){
+      if (value.length < 1) {
+        this.errMsg = "Email can't be empty"
+      }
+      else {
         this.errMsg = ''
       }
     },
