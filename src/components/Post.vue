@@ -32,8 +32,7 @@ export default {
   background-color: rgb(231, 231, 231);
   margin: 50px;
   width: 350px;
-  padding: 20px;
-  padding-bottom: 5px;
+  padding: 20px 20px 5px;
 }
 
 .header {

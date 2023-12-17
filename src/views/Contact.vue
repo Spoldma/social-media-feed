@@ -8,7 +8,4 @@
 <script setup>
 </script>
 <style>
-p {
-  margin-top: 200px;
-}
 </style>

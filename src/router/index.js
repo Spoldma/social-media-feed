@@ -1,48 +1,53 @@
-import {createRouter, createWebHashHistory} from 'vue-router'
-import MainView from '../views/Home.vue'
-import SignupView from '../views/Signup.vue'
-import AddPost from "@/views/AddPost.vue";
-import AllPosts from "@/views/Home.vue";
-import login from "@/views/Login.vue";
-import Contact from "@/views/Contact.vue";
-import APost from "@/views/APost.vue";
+import { createRouter, createWebHistory } from 'vue-router'
+import AllPosts from "../views/Home.vue";
+import APost from "../views/APost.vue";
+import AddPost from "../views/AddPost.vue";
+import SignUp from "../views/Signup.vue";
+import LogIn from "../views/Login.vue";
 
-const routes = [
-    {
-        path: '/',
-        name: 'main',
-        component: AllPosts
+const routes = [{
+    path: '/',
+    name: 'AllPosts',
+    component: () =>
+        import ("../views/Home.vue")
     },
     {
-        path: '/signup',
-        name: 'signup',
-        component: SignupView
+        path: "/api/allposts",
+        name: "AllPosts",
+        component: AllPosts,
     },
     {
-        path: '/addpost',
-        name: 'addpost',
-        component: AddPost
-    },
-    {
-        path: '/login',
-        name: 'login',
-        component: login
-    },
-    {
-        path: '/contact',
-        name: 'contact',
-        component: Contact
-    },
-    {
-        path: "/apost/:id",
+        path: "/api/apost/:id",
         name: "APost",
         component: APost,
     },
+    {
+        path: "/addpost",
+        name: "AddPost",
+        component: AddPost,
+    },
+    {
+        path: "/signup",
+        name: "SignUp",
+        component: SignUp,
+    },
+    {
+        path: "/login",
+        name: "LogIn",
+        component: LogIn,
+    },
+    { //will route to AllPosts view if none of the previous routes apply
+        path: "/:catchAll(.*)",
+        name: "AllPosts",
+        component: AllPosts,
+    }
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(process.env.BASE_URL),
     routes
 })
+
+
 
 export default router

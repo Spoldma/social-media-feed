@@ -1,16 +1,16 @@
 <template>
   <div>
     <main>
-      <section class="addpost-page">
+      <section class="aPost-page">
         <div class="form-container">
           <form>
             <h3>A Post</h3>
             <div class="container">
               <div class="column">
-                <label for="body">Body: </label>
+                <label for="body">Body</label>
               </div>
               <div class="column">
-                <input name="body" type="text" id="body" required v-model="post.body" />
+                <input name="body" placeholder="body" type="text" id="body" required v-model="post.body" />
               </div>
             </div><br>
             <button @click="updatePost" class="updatePost">Update Post</button>
@@ -29,6 +29,7 @@ export default {
     return {
       post: {
         id: "",
+        date: "",
         body: "",
       },
     };
@@ -109,7 +110,7 @@ button {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  width: 30%;
+  width: 40%;
 }
 
 p {

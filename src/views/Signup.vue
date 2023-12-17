@@ -4,7 +4,7 @@
       <section class="signup-page">
         <div class="form-container">
           <form>
-            <h3>SignUp</h3>
+            <h3>Signup</h3>
             <div class="container">
               <div class="column">
                 <label for="email">Email</label>
@@ -15,8 +15,8 @@
                 <input type="password" placeholder="Password" name="password" required v-model="password">
               </div>
             </div><br>
-            <div v-if="errMsg">{{errMsg}} </div>
-            <button @click="SignUp" class="SignUp">SignUp</button>
+            <p v-if="errMsg">{{ errMsg }}</p>
+            <button @click="SignUp" class="SignUp">Signup</button>
           </form>
         </div>
       </section>

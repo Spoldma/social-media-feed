@@ -4,7 +4,7 @@
       <section class="login-page">
         <div class="form-container">
           <form>
-            <h3>LogIn</h3>
+            <h3>Login</h3>
             <div class="container">
               <div class="column">
                 <label for="email">Email</label>
@@ -15,7 +15,7 @@
                 <input type="password" placeholder="Password" name="password" required v-model="password">
               </div>
             </div><br>
-            <button @click="LogIn"  class="center">LogIn</button>
+            <button @click="LogIn"  class="center">Login</button>
             <button @click='this.$router.push("/signup")' class="center">Signup</button>
           </form>
         </div>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "LogIn",
+  name: "Login",
   data: function() {
     return {
       email: '',

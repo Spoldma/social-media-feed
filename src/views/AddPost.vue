@@ -27,15 +27,15 @@ export default {
   data() {
     return {
       post: {
-        title: "",
+        date: "",
         body: "",
-        urllink: "",
       },
     };
   },
   methods: {
     addPost() {
       var data = {
+        date: this.post.date,
         body: this.post.body
       };
       fetch("http://localhost:3000/api/posts", {
@@ -47,7 +47,7 @@ export default {
       })
           .then((response) => {
             console.log(response.data);
-            this.$router.push("/");
+            this.$router.push("/api/posts");
           })
           .catch((e) => {
             console.log(e);
