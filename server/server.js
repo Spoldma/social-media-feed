@@ -24,8 +24,15 @@ app.post('/api/posts', async(req, res) => {
     try {
         console.log("a post request has arrived");
         const post = req.body;
+        //Get date
+        const date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let currentDate = `${year}-${month}-${day}`;
+
         const newpost = await pool.query(
-            "INSERT INTO posts(body) values ($1)    RETURNING*", [post.body]
+            "INSERT INTO posts(body, date) values ($1, $2)    RETURNING*", [post.body, currentDate]
         );
         res.json(newpost);
     } catch (err) {
