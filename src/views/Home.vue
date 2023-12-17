@@ -10,9 +10,6 @@
     <button @click='this.$router.push("/addpost")' class="left">Add Post</button>
     <button @click="deleteAll" class="right">Delete all</button>
   </div>
-  <div class="add post">
-    <button @click="goToAddPost" class="center">Add post</button>
-  </div>
   </body>
 </template>
 
@@ -37,9 +34,6 @@ export default {
       fetch('http://localhost:3000/api/posts', { method: 'DELETE',credentials: 'include',  })
           .then(() => this.status = 'Delete successful');
       window.location.reload();
-    },
-    goToAddPost() {
-      this.$router.push('/addpost');
     },
     Logout() {
       fetch("http://localhost:3000/auth/logout", {
@@ -91,7 +85,7 @@ button {
 
 .bottom-buttons {
   margin-top: -40px;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 .left {
