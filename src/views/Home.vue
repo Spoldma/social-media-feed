@@ -9,6 +9,9 @@
   <div class="delete-all">
     <button @click="deleteAll" class="center">Delete all</button>
   </div>
+  <div class="add post">
+    <button @click="goToAddPost" class="center">Add post</button>
+  </div>
   </body>
 </template>
 
@@ -30,10 +33,12 @@ export default {
           .catch((err) => console.log(err.message));
     },
     deleteAll()  {
-      // Simple DELETE request with fetch
       fetch('http://localhost:3000/api/posts', { method: 'DELETE',credentials: 'include',  })
           .then(() => this.status = 'Delete successful');
       window.location.reload();
+    },
+    goToAddPost() {
+      this.$router.push('/addpost');
     },
     Logout() {
       fetch("http://localhost:3000/auth/logout", {
