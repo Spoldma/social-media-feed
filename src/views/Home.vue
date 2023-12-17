@@ -89,7 +89,6 @@ button {
 }
 
 .delete-all {
-  position: sticky;
-  bottom: 100px;
+  margin-bottom: 100px;
 }
 </style>

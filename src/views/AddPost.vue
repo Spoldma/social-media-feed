@@ -47,8 +47,7 @@ export default {
       })
           .then((response) => {
             console.log(response.data);
-            this.$router.push("/api/posts");
-            window.location.href = '/'
+            window.location.href = '/';
           })
           .catch((e) => {
             console.log(e);

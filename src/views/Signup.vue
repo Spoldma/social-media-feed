@@ -76,7 +76,7 @@ export default {
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
-            this.$router.push("/");
+            window.location.href = '/';
           })
           .catch((e) => {
             console.log(e);
